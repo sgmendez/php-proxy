@@ -112,7 +112,7 @@ class Proxy {
 		}
 	}
 	
-	public function forward(Request $request, $url){
+	public function forward(Request $request, $url, $connectTiemout = 10, $timeout = 0){
 	
 		// change request URL
 		$request->setUrl($url);
@@ -122,8 +122,8 @@ class Proxy {
 		$this->response = new Response();
 		
 		$options = array(
-			CURLOPT_CONNECTTIMEOUT 	=> 10,
-			CURLOPT_TIMEOUT			=> 0,
+			CURLOPT_CONNECTTIMEOUT 	=> $connectTiemout,
+			CURLOPT_TIMEOUT			=> $timeout,
 			
 			// don't return anything - we have other functions for that
 			CURLOPT_RETURNTRANSFER	=> false,
