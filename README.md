@@ -19,7 +19,7 @@ Installation
 Install it using [Composer](http://getcomposer.org):
 
 ```bash
-composer require athlon1600/php-proxy
+composer require sgmendez/php-proxy
 ```
 
 Example
